@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Ratna Lis Loi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #e85d75;
+      --secondary: #f9d7dd;
+      --accent: #b07a8d;
+      --dark: #333;
+      --light: #fef6f9;
+      --gray: #777;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    header {
+      background: white;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 16px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 30px 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 8px solid white;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: var(--primary);
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .hero h2 {
+      font-size: 20px;
+      color: var(--accent);
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--gray);
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 2px solid var(--primary);
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(232, 93, 117, 0.2);
+    }
+
+    /* Sections */
+    section {
+      padding: 100px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      width: 70px;
+      height: 3px;
+      background: var(--primary);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* About */
+    .about-content {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .about-text {
+      flex: 2;
+      min-width: 300px;
+    }
+
+    .about-text h3 {
+      font-size: 24px;
+      color: var(--accent);
+      margin-bottom: 25px;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+      color: var(--gray);
+    }
+
+    .about-skills {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .skill-category {
+      margin-bottom: 35px;
+    }
+
+    .skill-category h4 {
+      font-size: 18px;
+      color: var(--primary);
+      margin-bottom: 15px;
+      padding-left: 10px;
+      border-left: 3px solid var(--primary);
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill-tag {
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Portfolio */
+    .portfolio-filter {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 50px;
+    }
+
+    .filter-btn {
+      background: white;
+      color: var(--dark);
+      border: none;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .portfolio-item {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .portfolio-img {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .portfolio-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .portfolio-item:hover .portfolio-img img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-info {
+      padding: 25px;
+    }
+
+    .portfolio-info h3 {
+      font-size: 20px;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .portfolio-info p {
+      color: var(--gray);
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    .portfolio-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .portfolio-tag {
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 5px 12px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* Experience */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: var(--secondary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 20px 40px;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: var(--primary);
+      border: 4px solid white;
+      top: 30px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-item:nth-child(odd)::after {
+      right: -12px;
+    }
+
+    .timeline-item:nth-child(even)::after {
+      left: -12px;
+    }
+
+    .timeline-content {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .timeline-content h3 {
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .timeline-content .date {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .timeline-content p {
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    /* Contact */
+    .contact-container {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    .contact-card h3 {
+      font-size: 22px;
+      color: var(--primary);
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .contact-card h3::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background: var(--primary);
+      bottom: -8px;
+      left: 0;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .contact-icon {
+      width: 45px;
+      height: 45px;
+      background: var(--secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .contact-text h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .contact-text p, .contact-text a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-text a:hover {
+      color: var(--primary);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--secondary);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-5px);
+    }
+
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 20px;
+      border: 2px solid #eee;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-content p {
+      margin-bottom: 20px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .motivasi {
+      font-style: italic;
+      font-size: 18px;
+      margin: 30px 0;
+      padding: 20px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.05);
+      display: inline-block;
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 30px;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .timeline::before {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+        left: 0 !important;
+      }
+      
+      .timeline-item:nth-child(odd)::after,
+      .timeline-item:nth-child(even)::after {
+        left: 21px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+      
+      .section-title h2 {
+        font-size: 32px;
+      }
+      
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Navigation -->
+  <header>
+    <nav>
+      <div class="logo">Ratna</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Saya</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#experience">Pengalaman</a>
+        <a href="#contact">Kontak</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Ratna Lis Loi</h1>
+        <h2>Kasir & Mahasiswi Teknologi Informasi</h2>
+        <p>Saya adalah mahasiswi S1 Teknologi Informasi yang tengah menempuh studi sambil bekerja sebagai kasir dan admin toko.
+           Pengalaman ini membentuk saya menjadi pribadi yang disiplin,
+           cekatan, dan mampu mengelola berbagai tanggung jawab secara bersamaan. Saya memiliki keterampilan dalam administrasi data,
+            manajemen waktu yang efisien, serta kemampuan dalam menyelesaikan masalah dengan solusi yang praktis dan efektif..</p>
+        <a href="#portfolio" class="btn">Lihat Portfolio</a>
+      </div>
+      <div class="hero-image">
+        <img src="cantiknyaa foto.jpg" alt="Ratna Lis Loi">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="section-title">
+      <h2>Tentang Saya</h2>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <h3>Profil Profesional</h3>
+        <p></p>Saya adalah mahasiswi S1 Teknologi Informasi yang berdedikasi, saat ini juga bekerja sebagai kasir sekaligus 
+              admin toko. Perpaduan antara studi akademik dan pengalaman kerja harian telah membentuk saya menjadi pribadi 
+              yang teliti, bertanggung jawab, dan mampu mengelola waktu secara efisien. Saya memiliki keahlian dalam administrasi keuangan,
+              pengelolaan data, serta pemecahan masalah secara cepat dan tepat. Dengan semangat belajar yang tinggi dan komitmen terhadap profesionalisme, 
+              saya siap memberikan kontribusi terbaik dalam setiap kesempatan yang saya jalani.</p>
+      </div>
+      <div class="about-skills">
+        <div class="skill-category">
+          <h4>Keahlian Teknis</h4>
+          <div class="skill-tags">
+            <div class="skill-tag">Mesin Kasir / POS</div>
+            <div class="skill-tag">Administrasi Teliti</div>
+            <div class="skill-tag">Laporan Keuangan</div>
+            <div class="skill-tag">Microsoft Excel</div>
+            <div class="skill-tag">Microsoft Word</div>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h4>Kemampuan Lain</h4>
+          <div class="skill-tags">
+            <div class="skill-tag">Komunikasi</div>
+            <div class="skill-tag">Manajemen Waktu</div>
+            <div class="skill-tag">Pemecahan Masalah</div>
+            <div class="skill-tag">Kerja Tim</div>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h4>Hobi</h4>
+          <div class="skill-tags">
+            <div class="skill-tag">Membaca Buku</div>
+            <div class="skill-tag">Menggambar</div>
+            <div class="skill-tag">Musik</div>
+            <div class="skill-tag">Jalan-jalan</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <div class="section-title">
+      <h2>Portfolio</h2>
+    </div>
+    
+    <div class="portfolio-filter">
+      <button class="filter-btn active">Semua</button>
+      <button class="filter-btn">Pekerjaan</button>
+      <button class="filter-btn">Kuliah</button>
+      <button class="filter-btn">Lainnya</button>
+    </div>
+    
+    <div class="portfolio-grid">
+      <!-- Portfolio Item 1: Pekerjaan -->
+      <div class="portfolio-item">
+        <div class="portfolio-img">
+          <img src="menghitung.jpg">
+        </div>
+        <div class="portfolio-info">
+          <h3>Sistem Administrasi Toko</h3>
+          <p>Pengembangan sistem administrasi untuk manajemen inventaris dan penjualan di toko retail.</p>
+          <div class="portfolio-tags">
+            <div class="portfolio-tag">Pekerjaan</div>
+            <div class="portfolio-tag">Administrasi</div>
+            <div class="portfolio-tag">Manajemen</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Portfolio Item 2: Pekerjaan -->
+      <div class="portfolio-item">
+        <div class="portfolio-img">
+          <img src="laporan keuangan.jpg" alt="Laporan Keuangan">
+        </div>
+        <div class="portfolio-info">
+          <h3>Laporan Keuangan Bulanan</h3>
+          <p>Desain template laporan keuangan bulanan untuk usaha kecil dengan analisis pendapatan dan pengeluaran.</p>
+          <div class="portfolio-tags">
+            <div class="portfolio-tag">Pekerjaan</div>
+            <div class="portfolio-tag">Keuangan</div>
+            <div class="portfolio-tag">Excel</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Portfolio Item 3: Kuliah -->
+      <div class="portfolio-item">
+        <div class="portfolio-img">
+          <img src="presentasi.jpg" alt="Presentasi Kuliah">
+        </div>
+        <div class="portfolio-info">
+          <h3>Presentasi Sistem Informasi</h3>
+          <p>Presentasi kuliah tentang pengembangan sistem informasi manajemen untuk usaha kecil.</p>
+          <div class="portfolio-tags">
+            <div class="portfolio-tag">Kuliah</div>
+            <div class="portfolio-tag">Presentasi</div>
+            <div class="portfolio-tag">TI</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Portfolio Item 4: Kuliah -->
+      <div class="portfolio-item">
+        <div class="portfolio-img">
+          <img src="pembuatan web.jpg" alt="Proyek TI">
+        </div>
+        <div class="portfolio-info">
+          <h3>Proyek Aplikasi Web</h3>
+          <p>Pengembangan aplikasi web untuk manajemen inventaris sebagai proyek mata kuliah pemrograman web.</p>
+          <div class="portfolio-tags">
+            <div class="portfolio-tag">Kuliah</div>
+            <div class="portfolio-tag">Web</div>
+            <div class="portfolio-tag">Programming</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience">
+    <div class="section-title">
+      <h2>Pengalaman & Pendidikan</h2>
+    </div>
+    
+    <div class="timeline">
+      <!-- Experience 1 -->
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Kasir & Admin</h3>
+          <span class="date">2023 - Sekarang</span>
+          <p>Cikarang Plastik Mandiri</p>
+          <p>Melayani transaksi pelanggan, input data penjualan, membuat laporan keuangan harian, dan mengelola administrasi toko.</p>
+        </div>
+      </div>
+      
+      <!-- Education 1 -->
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>S1 Teknologi Informasi</h3>
+          <span class="date">2023 - Sekarang</span>
+          <p>Universitas BINA SARANA INFORMATIKA</p>
+          <p>Sedang menempuh pendidikan sarjana dengan fokus pada pengembangan sistem informasi dan teknologi.</p>
+        </div>
+      </div>
+      
+      <!-- Experience 2 -->
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Pemandu Wisata</h3>
+          <span class="date">2021 - 2023</span>
+          <p>Desa Bawenifaoso</p>
+          <p>Mendampingi wisatawan lokal dalam kegiatan budaya dan alam, memberikan informasi tentang tradisi lokal, dan memastikan pengalaman wisata yang memuaskan.</p>
+        </div>
+      </div>
+      
+      <!-- Education 2 -->
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>SMA SWASTA KATOLIK BINTANG LAUT 1</h3>
+          <span class="date">2019 - 2023</span>
+          <p>Ilmu Pengetahuan Sosial</p>
+          <p>Menamatkan pendidikan menengah atas dengan jurusan IPS, dengan fokus pada ekonomi, sosiologi, dan geografi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="section-title">
+      <h2>Hubungi Saya</h2>
+    </div>
+    
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="contact-card">
+          <h3>Informasi Kontak</h3>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Telepon</h4>
+                <p>082159335133</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Email</h4>
+                <a href="mailto:retnolis@gmail.com">retnalisloi@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Lokasi</h4>
+                <p>Jl.Industri Bunih Asih No.76 Cikarang Utara 17530</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-card">
+          <h3>Sosial Media</h3>
+          <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <h3 style="color: var(--primary); margin-bottom: 25px; position: relative; padding-bottom: 10px; border-bottom: 3px solid var(--secondary);">Kirim Pesan</h3>
+        <form>
+          <div class="form-group">
+            <label for="name">Nama Lengkap</label>
+            <input type="text" id="name" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subjek</label>
+            <input type="text" id="subject" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Pesan</label>
+            <textarea id="message" class="form-control" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn" style="width: 100%;">Kirim Pesan</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p class="motivasi">"Bekerja dengan hati, belajar tanpa henti, dan melayani dengan sepenuh hati."</p>
+      <p>© 2023 Ratna Lis Loi. All Rights Reserved.</p>
+      <p class="copyright">Designed with ❤️ for professional portfolio</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Portfolio filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        const filter = btn.textContent;
+        
+        portfolioItems.forEach(item => {
+          if (filter === 'Semua') {
+            item.style.display = 'block';
+          } else {
+            const tags = item.querySelectorAll('.portfolio-tag');
+            let hasTag = false;
+            
+            tags.forEach(tag => {
+              if (tag.textContent.includes(filter)) {
+                hasTag = true;
+              }
+            });
+            
+            if (hasTag) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+    
+    // Form submission
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Terima kasih! Pesan Anda telah dikirim. Saya akan menghubungi Anda segera.');
+        this.reset();
+      });
+    }
+  </script>
+</body>
+</html>
